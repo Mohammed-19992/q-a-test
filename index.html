@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Questions Game with Scores</title>
+</head>
+
+<body>
+
+  <script>
+
+    // The array of questions for our game.
+    var questions = [
+      { q: "Are the stars white?", a: "true" },
+      { q: "Are there 365 days in a year?", a: "true" },
+      { q: "Is water blue?", a: "false" },
+      { q: "The Palestinian Nakbah happened in 1947?", a: "false" },
+      { q: "Watermelons are vegitables?", a: "false" },
+      { q: "Is Mohammed a common name?", a: "true"}
+    ];
+
+    // We start the game with a score of 0.
+    var score = 0;
+
+    // Loop over every question object
+    for (var i = 0; i < questions.length; i++) {
+      // Display current question to user and ask OK/Cancel
+      var answer = confirm(questions[i].q);
+
+      // Compare answers
+      if ((answer === true && questions[i].a === "true") ||
+        (answer === false && questions[i].a === "false")) {
+        // Increase score
+        score++;
+        alert("Correct!");
+      }
+      else {
+        alert("Wrong!");
+      }
+    }
+
+    // Show total at end
+    alert("Congratulations. You got " + score + "/" + questions.length);
+
+  </script>
+
+</body>
+
+</html>
